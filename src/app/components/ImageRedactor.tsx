@@ -44,6 +44,7 @@ const ImageRedactor = ({ images }: ImageRedactorProps) => {
 
   useEffect(() => {
     window.addEventListener("resize", () => {
+      if(!container.current) return
       setSize({
         width: container.current.clientWidth,
         height: container.current.clientHeight,

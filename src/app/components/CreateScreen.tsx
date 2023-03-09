@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import dynamic from "next/dynamic";
 import { MouseEventHandler, useState } from "react";
 import GenerateForm from "../components/GenerateForm";
@@ -8,13 +7,13 @@ const ImageRedactor = dynamic(() => import("../components/ImageRedactor"), {
   ssr: false,
 });
 
-const page = () => {
+const CreateScreen = () => {
   const [images, setImages] = useState<string[]>([]);
   const [textPrompt, setTextPrompt] = useState('');
   const [imagePrompt, setImagePrompt] = useState('');
   const addImage:MouseEventHandler<HTMLButtonElement> = async(e) => {
     e.preventDefault()
-    setImages([...images, "mikumiku.svg"]);
+    setImages([...images, "mikuglitch.png"]);
     console.log(images);
   };
   return (
@@ -35,4 +34,5 @@ const page = () => {
   );
 };
 
-export default page;
+export default CreateScreen;
+
